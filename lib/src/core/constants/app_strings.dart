@@ -9,7 +9,8 @@ abstract class AppStrings {
 
   // Shared Preference key
   static final spAlreadyInstalled = "${_config.packageName}.app_already_installed";
-  static final spAccessToken = "${_config.packageName}.user_access_token";
+  static final spUserId = "${_config.packageName}.user_id";
+  static final spUserSession = "${_config.packageName}.user_session";
   static final spLocale = "${_config.packageName}.app_locale";
   static final spLocationPermission = "${_config.packageName}.user_location_permission";
 
