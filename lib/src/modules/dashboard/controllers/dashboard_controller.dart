@@ -15,6 +15,11 @@ class DashboardController extends BaseController {
     super.onInit();
   }
 
+  navigateToLetterScreen({required String letterId}) {
+    logger.d(letterId);
+    Get.toNamed(Routes.LETTER, arguments: letterId);
+  }
+
   logOut() async {
     final sessionId = await preferenceManager.getString(AppStrings.spUserSession);
     authRepository.logOut(sessionId);

@@ -4,7 +4,6 @@ import '../../../core/constants/app_textstyles.dart';
 import '../../../core/constants/app_values.dart';
 import '../base/base_widget_mixin.dart';
 
-
 class Section extends StatelessWidget with BaseWidgetMixin {
   Section({
     super.key,
@@ -27,11 +26,11 @@ class Section extends StatelessWidget with BaseWidgetMixin {
           title,
           style: titleStyle,
         ),
-        SizedBox(
+        const SizedBox(
           height: AppValues.gapSmall,
         ),
         child,
-        SizedBox(
+        const SizedBox(
           height: AppValues.gap,
         ),
       ],

@@ -4,7 +4,9 @@ import 'package:monna_no_nihongo/src/modules/auth/bindings/register_binding.dart
 import 'package:monna_no_nihongo/src/modules/auth/views/login_view.dart';
 import 'package:monna_no_nihongo/src/modules/auth/views/register_view.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/bindings/dashboard_binding.dart';
+import 'package:monna_no_nihongo/src/modules/dashboard/bindings/letter_screen_binding.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/views/dashboard_view.dart';
+import 'package:monna_no_nihongo/src/modules/dashboard/views/letter_screen_view.dart';
 import 'package:monna_no_nihongo/src/modules/splash/bindings/splash_binding.dart';
 import 'package:monna_no_nihongo/src/modules/splash/views/splash_view.dart';
 
@@ -42,6 +44,13 @@ class AppPages {
       binding: DashboardBinding(),
       page: () {
         return DashboardView();
+      },
+    ),
+    GetPage(
+      name: Routes.LETTER,
+      binding: LetterScreenBinding(),
+      page: () {
+        return LetterScreenView();
       },
     ),
   ];
