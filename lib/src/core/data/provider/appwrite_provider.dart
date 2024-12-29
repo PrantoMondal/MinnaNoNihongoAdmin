@@ -31,4 +31,9 @@ class AppwriteProvider {
     );
     return response;
   }
+
+  Future<dynamic> logOut(String sessionId) async {
+    final response = await account!.deleteSession(sessionId: sessionId);
+    return response;
+  }
 }

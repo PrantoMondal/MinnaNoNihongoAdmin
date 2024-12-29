@@ -12,4 +12,8 @@ class AuthRepository {
   Future<models.Session> login(Map map) async {
     return await appwriteProvider.login(map);
   }
+
+  Future<dynamic> logOut(String sessionId) {
+    return appwriteProvider.logOut(sessionId);
+  }
 }
