@@ -8,4 +8,8 @@ class AuthRepository {
   Future<models.User> signUp(Map map) async {
     return await appwriteProvider.signUp(map);
   }
+
+  Future<models.Session> login(Map map) async {
+    return await appwriteProvider.login(map);
+  }
 }

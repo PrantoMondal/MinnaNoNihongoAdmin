@@ -56,9 +56,9 @@ class LoginView extends BaseView<LoginController> {
             ElevatedButton(
               onPressed: () {
                 if (controller.formKey.currentState?.validate() ?? false) {
-                  // Perform login action here
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Logging in...')),
+                  controller.login(
+                    email: controller.emailController.text.trim(),
+                    password: controller.passwordController.text,
                   );
                 }
               },

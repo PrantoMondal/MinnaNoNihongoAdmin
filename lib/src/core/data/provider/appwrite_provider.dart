@@ -23,4 +23,12 @@ class AppwriteProvider {
 
     return response;
   }
+
+  Future<models.Session> login(Map map) async {
+    final response = await account!.createEmailPasswordSession(
+      email: map["email"],
+      password: map["password"],
+    );
+    return response;
+  }
 }

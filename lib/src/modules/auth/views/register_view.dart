@@ -58,7 +58,7 @@ class RegisterView extends BaseView<RegisterController> {
             TextFormField(
               controller: controller.passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Password',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.lock),
@@ -76,7 +76,7 @@ class RegisterView extends BaseView<RegisterController> {
                 if (controller.formKey.currentState?.validate() ?? false) {
                   controller.signUp(
                     name: controller.nameController.value.text,
-                    email: controller.emailController.value.text,
+                    email: controller.emailController.value.text.trim(),
                     password: controller.passwordController.value.text,
                   );
                 }
