@@ -13,6 +13,11 @@ class LoginController extends BaseController {
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  clearTextFields() {
+    emailController.clear();
+    passwordController.clear();
+  }
+
   navigateToSignUp() {
     Get.toNamed(Routes.SIGNUP);
   }
@@ -25,6 +30,7 @@ class LoginController extends BaseController {
           "email": email.toString(),
           "password": password.toString(),
         }).then((value) {
+          clearTextFields();
           Fluttertoast.showToast(msg: "Login successful");
           // Get.offAllNamed(Routes.HOME);
         }).catchError((error) {

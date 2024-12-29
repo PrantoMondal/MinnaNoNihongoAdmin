@@ -16,6 +16,12 @@ class RegisterController extends BaseController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   var isLoading = false.obs;
 
+  clearTextFields() {
+    nameController.clear();
+    emailController.clear();
+    passwordController.clear();
+  }
+
   navigateToLogin() {
     Get.toNamed(Routes.LOGIN);
   }
@@ -35,6 +41,7 @@ class RegisterController extends BaseController {
           "email": email.toString(),
           "password": password.toString(),
         }).then((value) {
+          clearTextFields();
           Fluttertoast.showToast(msg: "Account created successfully");
         }).catchError((error) {
           logger.d(error);

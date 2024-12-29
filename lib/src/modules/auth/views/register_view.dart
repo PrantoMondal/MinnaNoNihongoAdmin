@@ -11,21 +11,21 @@ class RegisterView extends BaseView<RegisterController> {
   @override
   Widget body(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Form(
         key: controller.formKey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'Create an Account',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             // Name field
             TextFormField(
               controller: controller.nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Name',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.person),
@@ -37,11 +37,11 @@ class RegisterView extends BaseView<RegisterController> {
                 return null;
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Email field
             TextFormField(
               controller: controller.emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Email',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.email),
@@ -53,7 +53,7 @@ class RegisterView extends BaseView<RegisterController> {
                 return null;
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Password field
             TextFormField(
               controller: controller.passwordController,
@@ -70,7 +70,7 @@ class RegisterView extends BaseView<RegisterController> {
                 return null;
               },
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
                 if (controller.formKey.currentState?.validate() ?? false) {
@@ -81,20 +81,20 @@ class RegisterView extends BaseView<RegisterController> {
                   );
                 }
               },
-              child: Text('Register'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 16.0),
-                minimumSize: Size(double.infinity, 50),
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                minimumSize: const Size(double.infinity, 50),
               ),
+              child: const Text('Register'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Already have an account?"),
+                const Text("Already have an account?"),
                 TextButton(
                   onPressed: controller.navigateToLogin,
-                  child: Text('Login'),
+                  child: const Text('Login'),
                 ),
               ],
             ),
