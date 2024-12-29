@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart' as models;
 
@@ -11,13 +13,14 @@ class AppwriteProvider {
     account = Account(client);
   }
 
-  Future<models.User> signup(Map map) async {
+  Future<models.User> signUp(Map map) async {
     final response = await account!.create(
       userId: map["userId"],
       email: map["email"],
       password: map["password"],
       name: map["name"],
     );
+
     return response;
   }
 }

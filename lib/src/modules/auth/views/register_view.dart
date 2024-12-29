@@ -74,9 +74,10 @@ class RegisterView extends BaseView<RegisterController> {
             ElevatedButton(
               onPressed: () {
                 if (controller.formKey.currentState?.validate() ?? false) {
-                  // Perform registration action here
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Registering...')),
+                  controller.signUp(
+                    name: controller.nameController.value.text,
+                    email: controller.emailController.value.text,
+                    password: controller.passwordController.value.text,
                   );
                 }
               },
