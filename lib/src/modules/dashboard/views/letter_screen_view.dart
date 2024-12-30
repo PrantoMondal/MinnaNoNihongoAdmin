@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/controllers/letter_screen_controller.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/data/letters.dart';
+import 'package:monna_no_nihongo/src/modules/dashboard/widgets/custom_grid_view.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_view.dart';
+import 'package:monna_no_nihongo/src/modules/shared/widgets/section.dart';
 
 class LetterScreenView extends BaseView<LetterScreenController> {
   @override
@@ -14,43 +16,50 @@ class LetterScreenView extends BaseView<LetterScreenController> {
 
   @override
   Widget body(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.all(16),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 5,
-        crossAxisSpacing: 2,
-        mainAxisSpacing: 2,
-      ),
-      itemCount: letters.length,
-      itemBuilder: (context, index) {
-        return Container(
-          decoration: BoxDecoration(
-            // color: Colors.blue,
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: Colors.green.withOpacity(0.3),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0).copyWith(bottom: 16),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 16,
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                letters[index]['${controller.arguments.toLowerCase()}']!,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                ),
+            Section(
+              title: 'Gojūon',
+              child: CustomGridView(
+                crossAxisCount: 5,
+                args: '${controller.arguments.toLowerCase()}',
+                data: letters,
               ),
-              Text(
-                letters[index]['romaji']!,
-                style: const TextStyle(
-                  color: Colors.black,
-                ),
+            ),
+            Section(
+              title: 'Dakuon',
+              child: CustomGridView(
+                crossAxisCount: 5,
+                args: '${controller.arguments.toLowerCase()}',
+                data: dakuonLetters,
               ),
-            ],
-          ),
-        );
-      },
+            ),
+            Section(
+              title: 'Han-Dakuon',
+              child: CustomGridView(
+                crossAxisCount: 5,
+                args: '${controller.arguments.toLowerCase()}',
+                data: handakuonLetters,
+              ),
+            ),
+            Section(
+              title: 'Youon',
+              child: CustomGridView(
+                crossAxisCount: 3,
+                args: '${controller.arguments.toLowerCase()}',
+                data: yoonLetters,
+                aspectRatio: 1.8,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

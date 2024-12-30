@@ -54,7 +54,7 @@ class DashboardView extends BaseView<DashboardController> {
           Section(
             title: 'Kanji',
             child: CustomCard(
-              title: '日本語',
+              title: '漢 字',
               onTap: () {},
             ),
           ),
