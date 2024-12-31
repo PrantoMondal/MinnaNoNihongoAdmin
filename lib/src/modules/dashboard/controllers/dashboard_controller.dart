@@ -20,6 +20,10 @@ class DashboardController extends BaseController {
     Get.toNamed(Routes.LETTER, arguments: letterId);
   }
 
+  navigateToKanjiScreen() {
+    Get.toNamed(Routes.KANJI);
+  }
+
   logOut() async {
     final sessionId = await preferenceManager.getString(AppStrings.spUserSession);
     authRepository.logOut(sessionId);

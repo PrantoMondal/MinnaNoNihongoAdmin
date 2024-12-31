@@ -8,6 +8,8 @@ abstract class Routes {
   static const SIGNUP = _Paths.SIGNUP;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const LETTER = _Paths.LETTER;
+  static const KANJI = _Paths.KANJI;
+  static const KANJI_DETAILS = _Paths.KANJI_DETAILS;
 }
 
 abstract class _Paths {
@@ -16,4 +18,6 @@ abstract class _Paths {
   static const SIGNUP = "/signup";
   static const DASHBOARD = "/dashboard";
   static const LETTER = "/letter";
+  static const KANJI = "/kanji";
+  static const KANJI_DETAILS = "/kanji_details";
 }

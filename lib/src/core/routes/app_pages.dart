@@ -4,9 +4,12 @@ import 'package:monna_no_nihongo/src/modules/auth/bindings/register_binding.dart
 import 'package:monna_no_nihongo/src/modules/auth/views/login_view.dart';
 import 'package:monna_no_nihongo/src/modules/auth/views/register_view.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/bindings/dashboard_binding.dart';
-import 'package:monna_no_nihongo/src/modules/dashboard/bindings/letter_screen_binding.dart';
+import 'package:monna_no_nihongo/src/modules/dashboard/bindings/letter_binding.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/views/dashboard_view.dart';
-import 'package:monna_no_nihongo/src/modules/dashboard/views/letter_screen_view.dart';
+import 'package:monna_no_nihongo/src/modules/dashboard/views/letter_view.dart';
+import 'package:monna_no_nihongo/src/modules/kanji/bindings/kanji_binding.dart';
+import 'package:monna_no_nihongo/src/modules/kanji/views/kanji_details.dart';
+import 'package:monna_no_nihongo/src/modules/kanji/views/kanji_view.dart';
 import 'package:monna_no_nihongo/src/modules/splash/bindings/splash_binding.dart';
 import 'package:monna_no_nihongo/src/modules/splash/views/splash_view.dart';
 
@@ -48,9 +51,23 @@ class AppPages {
     ),
     GetPage(
       name: Routes.LETTER,
-      binding: LetterScreenBinding(),
+      binding: LetterBinding(),
       page: () {
-        return LetterScreenView();
+        return LetterView();
+      },
+    ),
+    GetPage(
+      name: Routes.KANJI,
+      binding: KanjiBinding(),
+      page: () {
+        return KanjiView();
+      },
+    ),
+    GetPage(
+      name: Routes.KANJI_DETAILS,
+      binding: KanjiBinding(),
+      page: () {
+        return KanjiDetails();
       },
     ),
   ];

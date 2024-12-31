@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:monna_no_nihongo/src/modules/dashboard/controllers/letter_screen_controller.dart';
+import 'package:monna_no_nihongo/src/modules/dashboard/controllers/letter_controller.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/data/letters.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/widgets/custom_grid_view.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_view.dart';
 import 'package:monna_no_nihongo/src/modules/shared/widgets/section.dart';
 
-class LetterScreenView extends BaseView<LetterScreenController> {
+class LetterView extends BaseView<LetterController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return AppBar(

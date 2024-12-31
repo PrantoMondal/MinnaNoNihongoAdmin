@@ -39,8 +39,8 @@ class CustomGridView extends StatelessWidget with BaseWidgetMixin {
             children: [
               Text(
                 data[index][args] ?? '',
-                style: const TextStyle(
-                  color: Colors.black,
+                style: TextStyle(
+                  color: data[index][args] == "__" ? Colors.grey : Colors.black,
                   fontSize: 24,
                 ),
               ),

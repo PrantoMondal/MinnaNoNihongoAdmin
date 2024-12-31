@@ -55,7 +55,7 @@ class DashboardView extends BaseView<DashboardController> {
             title: 'Kanji',
             child: CustomCard(
               title: '漢 字',
-              onTap: () {},
+              onTap: () => controller.navigateToKanjiScreen(),
             ),
           ),
         ],

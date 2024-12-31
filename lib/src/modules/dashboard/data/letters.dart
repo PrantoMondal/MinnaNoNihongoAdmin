@@ -35,7 +35,9 @@ final letters = [
   {"hiragana": "め", "katakana": "メ", "romaji": "me"},
   {"hiragana": "も", "katakana": "モ", "romaji": "mo"},
   {"hiragana": "や", "katakana": "ヤ", "romaji": "ya"},
+  {"hiragana": "__", "katakana": "__", "romaji": ""},
   {"hiragana": "ゆ", "katakana": "ユ", "romaji": "yu"},
+  {"hiragana": "__", "katakana": "__", "romaji": ""},
   {"hiragana": "よ", "katakana": "ヨ", "romaji": "yo"},
   {"hiragana": "ら", "katakana": "ラ", "romaji": "ra"},
   {"hiragana": "り", "katakana": "リ", "romaji": "ri"},
@@ -43,6 +45,9 @@ final letters = [
   {"hiragana": "れ", "katakana": "レ", "romaji": "re"},
   {"hiragana": "ろ", "katakana": "ロ", "romaji": "ro"},
   {"hiragana": "わ", "katakana": "ワ", "romaji": "wa"},
+  {"hiragana": "__", "katakana": "__", "romaji": ""},
+  {"hiragana": "__", "katakana": "__", "romaji": ""},
+  {"hiragana": "__", "katakana": "__", "romaji": ""},
   {"hiragana": "を", "katakana": "ヲ", "romaji": "wo"},
   {"hiragana": "ん", "katakana": "ン", "romaji": "n"}
 ];
