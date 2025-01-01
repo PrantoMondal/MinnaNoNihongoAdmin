@@ -104,7 +104,7 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
   }
 
   Color statusBarColor() {
-    return AppColors.primaryDarker;
+    return AppColors.black;
   }
 
   Widget? floatingActionButton() {

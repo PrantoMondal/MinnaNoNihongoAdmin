@@ -16,18 +16,39 @@ class KanjiDetails extends BaseView<KanjiController> {
   Widget body(BuildContext context) {
     final arguments = Get.arguments;
     return ListView.builder(
-      itemCount: kanji[arguments]?.length,
+      itemCount: kanji[arguments]?.length ?? 0,
       itemBuilder: (context, index) {
-        return ListTile(
-          leading: Text(
-            "${kanji[arguments]?[index]['kanji'] ?? ''}",
-          ),
-          leadingAndTrailingTextStyle: TextStyle(fontSize: 30, color: Colors.black),
-          subtitle: Text("${kanji[arguments]?[index]['romaji'] ?? ''}"),
-          title: Text("${kanji[arguments]?[index]['hiragana'] ?? ''}"),
-          trailing: Text(
-            "${kanji[arguments]?[index]['meaning'] ?? ''}",
-            style: TextStyle(fontSize: 14),
+        final data = kanji[arguments]?[index] as Map<String, dynamic>;
+        return Card(
+          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+          child: Padding(
+            padding: EdgeInsets.all(15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${data['kanji']}',
+                  style: const TextStyle(fontSize: 48, fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Meaning: ${data['meaning']}'),
+                    Text('Onyomi: ${data['onyomi']} (${data['onyomiRomaji']})'),
+                    Text('Kunyomi: ${data['kunyomi']} (${data['kunyomiRomaji']})'),
+                    const SizedBox(height: 10),
+                    const Text('Examples:'),
+                    // You need to iterate over the examples and display them
+                    ...List.generate(data['examples']?.length ?? 0, (exampleIndex) {
+                      final example = data['examples'][exampleIndex] as Map<String, String>;
+                      return Text('${example['vocabulary']} (${example['meaning']})');
+                    }),
+                  ],
+                )
+              ],
+            ),
           ),
         );
       },

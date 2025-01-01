@@ -25,7 +25,7 @@ const kSyne600W24S = TextStyle(
   fontFamily: 'Syne',
   fontSize: AppValues.fontSize_24,
   fontWeight: FontWeight.w600,
-  color: AppColors.primaryDarker,
+  color: AppColors.black,
   fontFeatures: [
     FontFeature.liningFigures(),
   ],
@@ -35,7 +35,7 @@ const kSyne600W20S = TextStyle(
   fontFamily: 'Syne',
   fontSize: AppValues.fontSize_20,
   fontWeight: FontWeight.w600,
-  color: AppColors.primaryDarker,
+  color: AppColors.black,
   fontFeatures: [
     FontFeature.liningFigures(),
   ],
@@ -45,7 +45,7 @@ const kSyne700W20S = TextStyle(
   fontFamily: 'Syne',
   fontSize: AppValues.fontSize_20,
   fontWeight: FontWeight.w700,
-  color: AppColors.primaryDarker,
+  color: AppColors.black,
   fontFeatures: [
     FontFeature.liningFigures(),
   ],

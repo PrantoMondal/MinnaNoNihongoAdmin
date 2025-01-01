@@ -18,6 +18,6 @@ class AppColors {
   static const baseWhite = Color(0xFFFFFFFF);
 
   // Customs
-  static const primary = Color(0xff212121);
-  static const primaryDarker = Color(0xff000000);
+  static const primary = Color(0xff7A5BFF);
+  static const black = Color(0xff000000);
 }
