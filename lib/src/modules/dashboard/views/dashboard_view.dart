@@ -58,6 +58,13 @@ class DashboardView extends BaseView<DashboardController> {
               onTap: () => controller.navigateToKanjiScreen(),
             ),
           ),
+          Section(
+            title: 'Vocabulary',
+            child: CustomCard(
+              title: 'Lesson 1 - 25',
+              onTap: () => controller.navigateToKanjiScreen(),
+            ),
+          ),
         ],
       ),
     );
