@@ -1,21 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/widgets/custom_card.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_view.dart';
+import 'package:monna_no_nihongo/src/modules/shared/widgets/application_bar.dart';
 import 'package:monna_no_nihongo/src/modules/shared/widgets/section.dart';
 
 class DashboardView extends BaseView<DashboardController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
-    return AppBar(
-      title: const Text('Dashboard'),
+    return ApplicationBar(
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => Get.back(),
+      ),
+      titleWidget: const Text('Dashboard'),
       actions: [
         IconButton(
+          icon: const Icon(Icons.logout),
           onPressed: () {
             controller.logOut();
           },
-          icon: const Icon(Icons.logout),
         ),
       ],
     );
@@ -59,10 +65,10 @@ class DashboardView extends BaseView<DashboardController> {
             ),
           ),
           Section(
-            title: 'Vocabulary',
+            title: 'Particles',
             child: CustomCard(
-              title: 'Lesson 1 - 25',
-              onTap: () => controller.navigateToKanjiScreen(),
+              title: '助詞 (Joshi)',
+              onTap: () => controller.navigateToParticleScreen(),
             ),
           ),
         ],

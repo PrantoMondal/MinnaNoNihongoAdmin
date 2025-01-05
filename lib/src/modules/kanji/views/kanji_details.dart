@@ -6,6 +6,7 @@ import 'package:monna_no_nihongo/src/modules/kanji/controllers/kanji_controller.
 import 'package:monna_no_nihongo/src/modules/kanji/data/kanji_data.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/widgets/kanji_card.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_view.dart';
+import 'package:monna_no_nihongo/src/modules/shared/widgets/application_bar.dart';
 
 class KanjiDetails extends BaseView<KanjiController> {
   KanjiDetails() {
@@ -15,8 +16,12 @@ class KanjiDetails extends BaseView<KanjiController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     final arguments = Get.arguments;
-    return AppBar(
-      title: Text(arguments),
+    return ApplicationBar(
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => Get.back(),
+      ),
+      titleWidget: Text(arguments),
     );
   }
 
@@ -59,12 +64,16 @@ class KanjiDetails extends BaseView<KanjiController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Onyomi: ${data['onyomi']} [ ${data['onyomiRomaji']} ]',
-                        ),
-                        Text(
-                          'Kunyomi: ${data['kunyomi']} [ ${data['kunyomiRomaji']} ]',
-                        ),
+                        data['onyomi'] != ''
+                            ? Text(
+                                'Onyomi: ${data['onyomi']} [ ${data['onyomiRomaji']} ]',
+                              )
+                            : const SizedBox(),
+                        data['kunyomi'] != ''
+                            ? Text(
+                                'Kunyomi: ${data['kunyomi']} [ ${data['kunyomiRomaji']} ]',
+                              )
+                            : const SizedBox(),
                         const SizedBox(height: AppValues.gapXSmall),
                         const Text('Examples:'),
                         ...List.generate(data['examples']?.length ?? 0, (exampleIndex) {

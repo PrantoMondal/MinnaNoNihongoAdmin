@@ -4,7 +4,6 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_textstyles.dart';
 import '../../../core/constants/app_values.dart';
 
-
 class ApplicationBar extends StatelessWidget implements PreferredSizeWidget {
   const ApplicationBar({
     super.key,

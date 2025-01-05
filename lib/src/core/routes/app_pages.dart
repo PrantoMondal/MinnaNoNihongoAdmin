@@ -12,6 +12,8 @@ import 'package:monna_no_nihongo/src/modules/kanji/views/kanji_details.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/views/kanji_view.dart';
 import 'package:monna_no_nihongo/src/modules/splash/bindings/splash_binding.dart';
 import 'package:monna_no_nihongo/src/modules/splash/views/splash_view.dart';
+import 'package:monna_no_nihongo/src/particles/bindings/particle_bindings.dart';
+import 'package:monna_no_nihongo/src/particles/views/particle_view.dart';
 
 part 'app_routes.dart';
 
@@ -68,6 +70,13 @@ class AppPages {
       binding: KanjiBinding(),
       page: () {
         return KanjiDetails();
+      },
+    ),
+    GetPage(
+      name: Routes.PARTICLE,
+      binding: ParticleBinding(),
+      page: () {
+        return ParticleView();
       },
     ),
   ];

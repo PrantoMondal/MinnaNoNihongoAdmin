@@ -24,6 +24,10 @@ class DashboardController extends BaseController {
     Get.toNamed(Routes.KANJI);
   }
 
+  navigateToParticleScreen() {
+    Get.toNamed(Routes.PARTICLE);
+  }
+
   logOut() async {
     final sessionId = await preferenceManager.getString(AppStrings.spUserSession);
     authRepository.logOut(sessionId);

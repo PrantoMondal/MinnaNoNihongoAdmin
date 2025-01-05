@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/controllers/kanji_controller.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/data/kanji_data.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_view.dart';
+import 'package:monna_no_nihongo/src/modules/shared/widgets/application_bar.dart';
+import 'package:monna_no_nihongo/src/modules/shared/widgets/ripple.dart';
 
 class KanjiView extends BaseView<KanjiController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
-    return AppBar(
-      title: const Text('Kanji'),
+    return ApplicationBar(
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => Get.back(),
+      ),
+      titleWidget: const Text('Kanji'),
     );
   }
 
@@ -16,19 +23,29 @@ class KanjiView extends BaseView<KanjiController> {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
+        childAspectRatio: 1.5,
       ),
       itemCount: kanji.keys.length,
       itemBuilder: (context, index) {
         String category = kanji.keys.toList()[index];
-        return Container(
-          margin: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: Colors.blue.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: ListTile(
-            onTap: () => controller.navigateToKanjiDetailScreen(category: category),
-            title: Text('$category (${kanji[category]?.length})'),
+        return Ripple(
+          onTap: () => controller.navigateToKanjiDetailScreen(category: category),
+          child: Container(
+            margin: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.blue.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              textAlign: TextAlign.center,
+              '$category (${kanji[category]?.length})',
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ),
         );
       },
