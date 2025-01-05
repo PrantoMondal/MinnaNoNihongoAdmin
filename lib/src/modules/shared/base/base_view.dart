@@ -63,7 +63,15 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
 
   Widget pageContent(BuildContext context) {
     return SafeArea(
-      child: body(context),
+      child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              opacity: 0.1,
+              image: AssetImage('assets/images/sakura.png'),
+              fit: BoxFit.contain,
+            ),
+          ),
+          child: body(context)),
     );
   }
 

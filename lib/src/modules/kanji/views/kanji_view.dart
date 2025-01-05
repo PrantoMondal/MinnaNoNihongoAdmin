@@ -13,13 +13,23 @@ class KanjiView extends BaseView<KanjiController> {
 
   @override
   Widget body(BuildContext context) {
-    return ListView.builder(
-      itemCount: kanji.length,
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+      ),
+      itemCount: kanji.keys.length,
       itemBuilder: (context, index) {
         String category = kanji.keys.toList()[index];
-        return ListTile(
-          onTap: () => controller.navigateToKanjiDetailScreen(category: category),
-          title: Text(category),
+        return Container(
+          margin: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Colors.blue.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: ListTile(
+            onTap: () => controller.navigateToKanjiDetailScreen(category: category),
+            title: Text('$category (${kanji[category]?.length})'),
+          ),
         );
       },
     );

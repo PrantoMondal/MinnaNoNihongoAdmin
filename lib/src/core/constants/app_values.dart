@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 abstract class AppValues {
   static const double zero = 0;
   static const double infinity = double.infinity;
@@ -199,10 +202,6 @@ abstract class AppValues {
   static const int textMaxLine_3 = 3;
   static const int textMaxLine_4 = 4;
   static const int textMaxLine_5 = 5;
-
-  // Notification
-  static const String notificationChannelId = "ict_olympiad_channel";
-  static const String notificationChannelName = "ICT Olympiad Channel";
 
   // Preference key
   static const String userTokenKey = "user-token";
