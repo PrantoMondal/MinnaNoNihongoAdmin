@@ -621,56 +621,6 @@ final kanji = {
       "meaning": "Name",
       "onyomi": "めい, みょう",
       "kunyomi": "な",
-      "examples": [
-        {"vocabulary": "名前", "romaji": "namae", "meaning": "name"},
-        {"vocabulary": "名刺", "romaji": "meishi", "meaning": "business card"}
-      ]
-    },
-    {
-      "kanji": "円",
-      "meaning": "Yen, Circle",
-      "onyomi": "えん",
-      "kunyomi": "まる(い)",
-      "examples": [
-        {"vocabulary": "円い", "romaji": "marui", "meaning": "round"},
-        {"vocabulary": "円", "romaji": "en", "meaning": "yen"}
-      ]
-    },
-    {
-      "kanji": "半",
-      "meaning": "Half",
-      "onyomi": "はん",
-      "kunyomi": "なか(ば)",
-      "examples": [
-        {"vocabulary": "半分", "romaji": "hanbun", "meaning": "half"},
-        {"vocabulary": "半年", "romaji": "hantoshi", "meaning": "half year"}
-      ]
-    },
-    {
-      "kanji": "全",
-      "meaning": "All",
-      "onyomi": "ぜん",
-      "kunyomi": "まった(く), すべて",
-      "examples": [
-        {"vocabulary": "全然", "romaji": "zenzen", "meaning": "completely, not at all"},
-        {"vocabulary": "全く", "romaji": "mattaku", "meaning": "really"}
-      ]
-    },
-    {
-      "kanji": "何",
-      "meaning": "What",
-      "onyomi": "か",
-      "kunyomi": "なん, なに",
-      "examples": [
-        {"vocabulary": "何", "romaji": "nani", "meaning": "what"},
-        {"vocabulary": "何日", "romaji": "nannichi", "meaning": "what day"}
-      ]
-    },
-    {
-      "kanji": "名",
-      "meaning": "Name",
-      "onyomi": "めい, みょう",
-      "kunyomi": "な",
       "onyomiRomaji": "mei, myou",
       "kunyomiRomaji": "na",
       "examples": [
