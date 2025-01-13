@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/controllers/dashboard_controller.dart';
@@ -11,11 +10,8 @@ class DashboardView extends BaseView<DashboardController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return ApplicationBar(
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => Get.back(),
-      ),
-      titleWidget: const Text('Dashboard'),
+      appTitleText: 'Dashboard',
+      centerTitle: true,
       actions: [
         IconButton(
           icon: const Icon(Icons.logout),
@@ -69,6 +65,13 @@ class DashboardView extends BaseView<DashboardController> {
             child: CustomCard(
               title: '助詞 (Joshi)',
               onTap: () => controller.navigateToParticleScreen(),
+            ),
+          ),
+          Section(
+            title: 'Lesson',
+            child: CustomCard(
+              title: '01 - 25',
+              onTap: () => controller.navigateToLessonScreen(),
             ),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:monna_no_nihongo/src/core/constants/app_colors.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/controllers/kanji_controller.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/data/kanji_data.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_view.dart';
@@ -10,11 +11,15 @@ class KanjiView extends BaseView<KanjiController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return ApplicationBar(
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => Get.back(),
+      leading: GestureDetector(
+        onTap: () => Get.back(),
+        child: const Icon(
+          Icons.arrow_back_ios,
+          color: AppColors.baseWhite,
+        ),
       ),
-      titleWidget: const Text('Kanji'),
+      centerTitle: true,
+      appTitleText: 'Kanji',
     );
   }
 

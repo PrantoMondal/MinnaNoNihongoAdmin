@@ -13,19 +13,17 @@ class ApplicationBar extends StatelessWidget implements PreferredSizeWidget {
     this.bgColor = AppColors.primary,
     // this.iconThemeData = kAppBarIconTheme,
     this.centerTitle = false,
-    this.titleWidget,
     this.iconThemeData,
-    this.titleTextStyle = kSyne500W16S,
+    this.titleTextStyle = roboto500W20S,
   });
 
   final Widget? leading;
   final String? appTitleText;
   final List<Widget>? actions;
   final Color bgColor;
-  final TextStyle? titleTextStyle;
+  final TextStyle titleTextStyle;
   final IconThemeData? iconThemeData;
   final bool centerTitle;
-  final Widget? titleWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +34,10 @@ class ApplicationBar extends StatelessWidget implements PreferredSizeWidget {
       surfaceTintColor: bgColor,
       elevation: AppValues.elevationLvl1,
       iconTheme: iconThemeData,
-      title: (appTitleText == null)
-          ? titleWidget
-          : Text(
-              appTitleText!,
-              style: titleTextStyle,
-            ),
+      title: Text(
+        appTitleText!,
+        style: titleTextStyle,
+      ),
       actions: actions,
     );
   }

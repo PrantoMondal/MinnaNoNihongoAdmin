@@ -9,7 +9,7 @@ class Section extends StatelessWidget with BaseWidgetMixin {
     super.key,
     required this.title,
     required this.child,
-    this.titleStyle = kSyne500W14S,
+    this.titleStyle = roboto600W14S,
   });
 
   final String title;

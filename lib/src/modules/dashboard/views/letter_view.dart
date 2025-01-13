@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:monna_no_nihongo/src/core/constants/app_colors.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/controllers/letter_controller.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/data/letters.dart';
 import 'package:monna_no_nihongo/src/modules/dashboard/widgets/custom_grid_view.dart';
@@ -11,11 +12,15 @@ class LetterView extends BaseView<LetterController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return ApplicationBar(
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => Get.back(),
+      leading: GestureDetector(
+        onTap: () => Get.back(),
+        child: const Icon(
+          Icons.arrow_back_ios,
+          color: AppColors.baseWhite,
+        ),
       ),
-      titleWidget: Text(controller.arguments.toString()),
+      centerTitle: true,
+      appTitleText: controller.arguments.toString(),
     );
   }
 

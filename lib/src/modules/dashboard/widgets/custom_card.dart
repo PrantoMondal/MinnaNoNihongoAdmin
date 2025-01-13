@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monna_no_nihongo/src/core/constants/app_colors.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_widget_mixin.dart';
 import 'package:monna_no_nihongo/src/modules/shared/widgets/ripple.dart';
 
@@ -12,7 +13,7 @@ class CustomCard extends StatelessWidget with BaseWidgetMixin {
     super.key,
     required this.title,
     this.subtitle,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = AppColors.baseWhite,
     this.onTap,
   });
 

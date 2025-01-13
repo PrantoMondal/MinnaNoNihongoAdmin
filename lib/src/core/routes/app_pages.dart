@@ -10,6 +10,8 @@ import 'package:monna_no_nihongo/src/modules/dashboard/views/letter_view.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/bindings/kanji_binding.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/views/kanji_details.dart';
 import 'package:monna_no_nihongo/src/modules/kanji/views/kanji_view.dart';
+import 'package:monna_no_nihongo/src/modules/lessons/bindings/lesson_binding.dart';
+import 'package:monna_no_nihongo/src/modules/lessons/views/lesson_view.dart';
 import 'package:monna_no_nihongo/src/modules/splash/bindings/splash_binding.dart';
 import 'package:monna_no_nihongo/src/modules/splash/views/splash_view.dart';
 import 'package:monna_no_nihongo/src/particles/bindings/particle_bindings.dart';
@@ -77,6 +79,13 @@ class AppPages {
       binding: ParticleBinding(),
       page: () {
         return ParticleView();
+      },
+    ),
+    GetPage(
+      name: Routes.LESSON,
+      binding: LessonBinding(),
+      page: () {
+        return LessonView();
       },
     ),
   ];

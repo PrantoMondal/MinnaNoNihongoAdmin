@@ -79,8 +79,9 @@ abstract class BaseView<Controller extends BaseController> extends GetView<Contr
     final snackBar = SnackBar(
       content: Text(
         message,
-        style: kTextSMNormal.copyWith(
+        style: roboto600W14S.copyWith(
           color: AppColors.baseWhite,
+          fontWeight: FontWeight.w400,
         ),
       ),
       backgroundColor: AppColors.red600,

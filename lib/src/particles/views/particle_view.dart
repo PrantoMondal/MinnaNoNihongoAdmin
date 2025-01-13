@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:monna_no_nihongo/src/core/constants/app_colors.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_view.dart';
 import 'package:monna_no_nihongo/src/modules/shared/widgets/application_bar.dart';
 import 'package:monna_no_nihongo/src/particles/controllers/particle_controller.dart';
@@ -11,11 +12,15 @@ class ParticleView extends BaseView<ParticleController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return ApplicationBar(
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => Get.back(),
+      leading: GestureDetector(
+        onTap: () => Get.back(),
+        child: const Icon(
+          Icons.arrow_back_ios,
+          color: AppColors.baseWhite,
+        ),
       ),
-      titleWidget: const Text('Particles'),
+      centerTitle: true,
+      appTitleText: 'Particles',
     );
   }
 
