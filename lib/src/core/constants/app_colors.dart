@@ -19,5 +19,9 @@ class AppColors {
 
   // Customs
   static const primary = Color(0xff7A5BFF);
+  static const primaryLighter = Color(0x807a5bff);
+  static const secondary = Color(0xffFC7300);
+  // static const secondaryDarker = Color(0xffFF6A00);
+  static const secondaryLighter = Color(0x80fc7300);
   static const black = Color(0xff000000);
 }
