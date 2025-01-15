@@ -16,7 +16,6 @@ class DashboardController extends BaseController {
   }
 
   navigateToLetterScreen({required String letterId}) {
-    logger.d(letterId);
     Get.toNamed(Routes.LETTER, arguments: letterId);
   }
 

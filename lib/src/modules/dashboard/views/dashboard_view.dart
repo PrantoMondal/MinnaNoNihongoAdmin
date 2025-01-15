@@ -50,6 +50,7 @@ class DashboardView extends BaseView<DashboardController> {
                   child: CustomCard(
                     title: 'あ',
                     subtitle: 'Hiragana',
+                    backgroundColor: AppColors.slate400,
                     onTap: () => controller.navigateToLetterScreen(letterId: 'Hiragana'),
                   ),
                 ),
@@ -58,6 +59,7 @@ class DashboardView extends BaseView<DashboardController> {
                   child: CustomCard(
                     title: 'ア',
                     subtitle: 'Katakana',
+                    backgroundColor: AppColors.slate400,
                     onTap: () => controller.navigateToLetterScreen(letterId: 'Katakana'),
                   ),
                 ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:monna_no_nihongo/src/modules/dashboard/data/letters.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_widget_mixin.dart';
 
 class CustomGridView extends StatelessWidget with BaseWidgetMixin {
   final String args;
-  final List<Map<String, String>> data;
+  final List<Letter> data;
   final int crossAxisCount;
   double? aspectRatio;
 
@@ -38,14 +39,14 @@ class CustomGridView extends StatelessWidget with BaseWidgetMixin {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                data[index][args] ?? '',
+                args == 'hiragana' ? data[index].hiragana : data[index].katakana,
                 style: TextStyle(
-                  color: data[index][args] == "__" ? Colors.grey : Colors.black,
+                  color: data[index].hiragana == "__" ? Colors.grey : Colors.black,
                   fontSize: 24,
                 ),
               ),
               Text(
-                data[index]['romaji'] ?? '',
+                data[index].romaji ?? '',
                 style: const TextStyle(
                   color: Colors.black,
                 ),

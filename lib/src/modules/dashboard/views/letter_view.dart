@@ -11,6 +11,7 @@ import 'package:monna_no_nihongo/src/modules/shared/widgets/section.dart';
 class LetterView extends BaseView<LetterController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
+    final arguments = Get.arguments;
     return ApplicationBar(
       leading: GestureDetector(
         onTap: () => Get.back(),
@@ -20,12 +21,13 @@ class LetterView extends BaseView<LetterController> {
         ),
       ),
       centerTitle: true,
-      appTitleText: controller.arguments.toString(),
+      appTitleText: arguments.toString(),
     );
   }
 
   @override
   Widget body(BuildContext context) {
+    final arguments = Get.arguments;
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0).copyWith(bottom: 16),
@@ -38,7 +40,7 @@ class LetterView extends BaseView<LetterController> {
               title: 'Gojūon',
               child: CustomGridView(
                 crossAxisCount: 5,
-                args: '${controller.arguments.toLowerCase()}',
+                args: '${arguments.toLowerCase()}',
                 data: letters,
               ),
             ),
@@ -46,7 +48,7 @@ class LetterView extends BaseView<LetterController> {
               title: 'Dakuon',
               child: CustomGridView(
                 crossAxisCount: 5,
-                args: '${controller.arguments.toLowerCase()}',
+                args: '${arguments.toLowerCase()}',
                 data: dakuonLetters,
               ),
             ),
@@ -54,7 +56,7 @@ class LetterView extends BaseView<LetterController> {
               title: 'Han-Dakuon',
               child: CustomGridView(
                 crossAxisCount: 5,
-                args: '${controller.arguments.toLowerCase()}',
+                args: '${arguments.toLowerCase()}',
                 data: handakuonLetters,
               ),
             ),
@@ -62,7 +64,7 @@ class LetterView extends BaseView<LetterController> {
               title: 'Youon',
               child: CustomGridView(
                 crossAxisCount: 3,
-                args: '${controller.arguments.toLowerCase()}',
+                args: '${arguments.toLowerCase()}',
                 data: yoonLetters,
                 aspectRatio: 1.8,
               ),

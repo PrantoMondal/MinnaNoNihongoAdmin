@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:monna_no_nihongo/src/core/constants/app_colors.dart';
+import 'package:monna_no_nihongo/src/core/constants/app_textstyles.dart';
 import 'package:monna_no_nihongo/src/core/constants/app_values.dart';
 import 'package:monna_no_nihongo/src/modules/shared/base/base_widget_mixin.dart';
 import 'package:monna_no_nihongo/src/modules/shared/widgets/ripple.dart';
@@ -48,7 +49,7 @@ class CustomCard extends StatelessWidget with BaseWidgetMixin {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: roboto600W14S.copyWith(color: AppColors.baseWhite, fontSize: 18),
                 ),
                 if (subtitle != null)
                   Text(
