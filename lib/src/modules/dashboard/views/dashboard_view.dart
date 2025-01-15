@@ -106,7 +106,7 @@ class DashboardView extends BaseView<DashboardController> {
                       width: 150,
                       backgroundColor: AppColors.secondaryLighter,
                       title: 'Vocabulary',
-                      onTap: controller.navigateToLessonScreen,
+                      onTap: controller.navigateToVocabularyScreen,
                     ),
                     const SizedBox(
                       height: 16,

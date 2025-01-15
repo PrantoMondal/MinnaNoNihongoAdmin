@@ -14,6 +14,9 @@ import 'package:monna_no_nihongo/src/modules/lessons/bindings/lesson_binding.dar
 import 'package:monna_no_nihongo/src/modules/lessons/views/lesson_view.dart';
 import 'package:monna_no_nihongo/src/modules/splash/bindings/splash_binding.dart';
 import 'package:monna_no_nihongo/src/modules/splash/views/splash_view.dart';
+import 'package:monna_no_nihongo/src/modules/vocabulary/bindings/vocabulary_binding.dart';
+import 'package:monna_no_nihongo/src/modules/vocabulary/views/vocabulary_details_view.dart';
+import 'package:monna_no_nihongo/src/modules/vocabulary/views/vocabulary_view.dart';
 import 'package:monna_no_nihongo/src/particles/bindings/particle_bindings.dart';
 import 'package:monna_no_nihongo/src/particles/views/particle_view.dart';
 
@@ -86,6 +89,20 @@ class AppPages {
       binding: LessonBinding(),
       page: () {
         return LessonView();
+      },
+    ),
+    GetPage(
+      name: Routes.VOCABULARY,
+      binding: VocabularyBinding(),
+      page: () {
+        return VocabularyView();
+      },
+    ),
+    GetPage(
+      name: Routes.VOCABULARY_DETAILS,
+      binding: VocabularyBinding(),
+      page: () {
+        return VocabularyDetailsView();
       },
     ),
   ];

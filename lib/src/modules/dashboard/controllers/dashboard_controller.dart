@@ -31,6 +31,10 @@ class DashboardController extends BaseController {
     Get.toNamed(Routes.LESSON);
   }
 
+  navigateToVocabularyScreen() {
+    Get.toNamed(Routes.VOCABULARY);
+  }
+
   logOut() async {
     final sessionId = await preferenceManager.getString(AppStrings.spUserSession);
     authRepository.logOut(sessionId);

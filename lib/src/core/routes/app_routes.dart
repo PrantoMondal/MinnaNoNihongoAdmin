@@ -12,6 +12,9 @@ abstract class Routes {
   static const KANJI_DETAILS = _Paths.KANJI_DETAILS;
   static const PARTICLE = _Paths.PARTICLE;
   static const LESSON = _Paths.LESSON;
+  static const LESSON_DETAILS = _Paths.LESSON_DETAILS;
+  static const VOCABULARY = _Paths.VOCABULARY;
+  static const VOCABULARY_DETAILS = _Paths.VOCABULARY_DETAILS;
 }
 
 abstract class _Paths {
@@ -24,4 +27,7 @@ abstract class _Paths {
   static const KANJI_DETAILS = "/kanji_details";
   static const PARTICLE = "/particles";
   static const LESSON = "/lesson";
+  static const LESSON_DETAILS = "/lesson_details";
+  static const VOCABULARY = "/vocabulary";
+  static const VOCABULARY_DETAILS = "/vocabulary_details";
 }
